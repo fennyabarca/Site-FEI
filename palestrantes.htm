@@ -1,0 +1,192 @@
+<!--
+    Projeto FEI Landing Page
+    @Author Fernanda Carolina Aguilera Abarca
+    @Data   01/01/2018
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="https://i.ibb.co/j6xnVn3/logo-azul.png"/>
+    <!--metatag de responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+
+    <title>Congresso de Inovação FEI</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_web_spk.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_mobile.css"/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+    <script>
+        //mobile nav slide toggle
+        $(function() {
+            var pull 		= $('#pull');
+                menu 		= $('nav ul');
+                menuHeight	= menu.height();
+            
+            $(pull).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            
+            $(window).resize(function() {
+                var w = $(window).width();
+                if(w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+            
+            //newsletter form
+            $("#newsletter_button").on("click", function(e) {
+                var strDescription = $("#newsletter_name").val() + "<br>" + $("#newsletter_email").val();
+                e.preventDefault();
+                $('#modal_speaker').modal('toggle');
+                $('#modal_speaker_name').html("Newsletter");
+                $('#modal_speaker_description').html("<p>" + strDescription + "</p>");
+            });
+
+            //modal
+            $(".pop").on("click", function(e) { //each element/img with pop class...
+                e.preventDefault();             //prevent previous action 
+                $('#modal_speaker').modal('toggle');    //turn on modal window
+                $('#modal_speaker_name').html(e.target.getAttribute('alt'));    //set modal "title" with speaker's name 
+                $('#modal_speaker_description').html(e.target.getAttribute('data-description')); //set modal "description" with data-description info
+            });
+		});		
+
+    </script>
+
+</head>
+
+<body>
+    <!--Cabeçalho-->
+    <div class="container">
+        <header class="cabecalho">
+            <a class="logo" href="index.htm" title="Congresso de Inovação FEI">
+                <img src="imagens/logo_small.png" alt="Congresso de Inovação FEI"/>
+            </a> 
+            <h1>A inteligência artificial e o ser humano</h1>
+            <nav class="clearfix">
+                <ul class="clearfix">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="evento.htm">O Evento</a></li>
+                    <li><a href="programacao.htm">Programação</a></li>
+                    <li><a href="palestrantes.htm">Palestrantes</a></li>
+                    <li><a href="anteriores.htm">Edições&nbsp;anteriores</a></li>
+                    <li><a href="https://portal.fei.edu.br/fale-conosco">Fale conosco</a></li>  
+                </ul>
+                <a href="#" id="pull">Menu</a>
+            </nav>
+        </header>
+
+        <!--Conteúdo-->
+        <div class="container-fluid speakers">
+            <h2>Palestrantes convidados em 2019</h2>
+            <div class="row">
+                <div class="col-sm-2" id="speaker">
+                    <img src="imgPalestrantes/001.jpg" class="img-thumbnail pop" alt="JEFF BEZOS" 
+                        data-description="Executivo e co-fundador da Amazon. Entusiasta de TI e financia pesquisas com IA."> 
+                    <h3>Jeff<br>Bezos</h3>
+                    <p>CEO da Amazon</p>
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.linkedin.com/company/jeff-bezos-news/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>                    
+                </div>
+                <div class="col-sm-2" id="speaker">
+                    <img src="imgPalestrantes/002.jpg" class="img-thumbnail pop" alt="SUSAN WOJCICKI" 
+                        data-description="Criadora do Google Doodle, Google Imagens, Google Books e também ferramentas de propagandas como o Adwords e o AdSense.">
+                    <h3>Susan<br>Wojcicki</h3>
+                    <p>Programadora Google</p>
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.linkedin.com/in/susan-wojcicki-b136a99/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>        
+                </div>    
+                <div class="col-sm-2" id="speaker">
+                    <img src="imgPalestrantes/003.jpg" class="img-thumbnail pop" alt="BERTIN NAHUM" 
+                        data-description="Engenheiro e empresário da Medtech especialista em robótica. Sua pesquisa é focada em como os robôs podem ajudar médicos em cirurgias complexas.">
+                    <h3>Bertin<br>Nahum</h3>
+                    <p>Engenheiro de IA</p>
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.linkedin.com/pulse/innovation-bertin-nahum-cr%C3%A9e-quantum-surgical-%C3%A0-hubert-vialatte/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>        
+                </div> 
+                <div class="col-sm-2" id="speaker">
+                    <img src="imgPalestrantes/004.jpg" class="img-thumbnail pop" alt="ELON MUSK" 
+                        data-description="Filantropo e visionário, debate sobre os pontos negativos da IA como uma possível dependência dos humanos a ações artificiais.">
+                    <h3>Elon<br>Musk</h3>
+                    <p>CEO Boring Company</p>
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.linkedin.com/in/mitchflynn/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>        
+                </div> 
+                <div class="col-sm-2" id="speaker">
+                    <img src="imgPalestrantes/005.jpg" class="img-thumbnail pop" alt="MARISSA MAYER" 
+                        data-description="Cientista da computação e presidente executiva do Yahoo!.">
+                    <h3>Marissa<br>Mayer</h3>
+                    <p>Cientista</p>
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.linkedin.com/in/marissa-mayer-3ab58229/"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>        
+                </div> 
+                <div class="col-sm-2" id="speaker">
+                        <img src="imgPalestrantes/006.jpg" class="img-thumbnail pop" alt="ALEX KIPMAN" 
+                            data-description="Cientista brasileiro, principal criador das tecnologias Kinect e Hololens.">
+                        <h3>Alex<br>Kipman</h3>
+                        <p>Desenvolvedor</p>
+                        <ul class="list-inline text-center">
+                            <li><a target="_blank" href="https://www.linkedin.com/in/akipman/"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>        
+                    </div> 
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal_speaker" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" data-dismiss="modal">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <p id="modal_speaker_name"></p>
+                                <p id="modal_speaker_description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    <!-- Footer -->
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <a href="https://portal.fei.edu.br/" target="blank"><img src="imagens/logo.png"></a>
+            <p class="footer-links">
+                <a href="index.htm">Home</a> -
+                <a href="evento.htm">O Evento</a> -  
+                <a href="programacao.htm">Programação</a> - 
+                <a href="palestrantes.htm">Palestrantes</a> - 
+                <a href="anteriores.htm">Edições anteriores</a> - 
+                <a href="https://portal.fei.edu.br/fale-conosco">Fale conosco</a> 
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/fei/?eid=ARAyRmpBVdbp409u-xfV-TqT6G_rTUGEcYebyDlp8cFQerXOqGMeXO-nstzD_xLiwG6ZF-eAHp8lri-g" target="blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/feionline" target="blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/faculdade-de-engenharia-industrial/?originalSubdomain=pt" target="blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h4>Inscreva-se</h4>
+            <form action="#" method="post">
+                <input type="text" id="newsletter_name" name="newsletter_name" placeholder="Seu nome">
+                <input type="text" id="newsletter_email" name="newsletter_email" placeholder="Seu e-Mail">
+                <button id="newsletter_button">Enviar</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>

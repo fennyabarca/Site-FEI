@@ -1,0 +1,139 @@
+<!--
+    Projeto FEI Landing Page
+    @Author Fernanda Carolina Aguilera Abarca
+    @Data   01/01/2018
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="https://i.ibb.co/j6xnVn3/logo-azul.png"/>
+    <title>O Evento</title>
+    
+    <!--Metatag de Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_web.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_mobile.css"/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_galeria.css"/>
+    
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+    <script>
+    //Função Slide do Menu
+        $(function() {
+        var pull 		= $('#pull');
+            menu 		= $('nav ul');
+            menuHeight	= menu.height();
+        
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+        
+        $(window).resize(function() {
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+                
+        //Botão "submeter" no rodapé
+        $("#newsletter_button").on("click", function(e) {
+            var strDescription = $("#newsletter_name").val() + "<br>" + $("#newsletter_email").val();
+            e.preventDefault();
+            $('#modal_speaker').modal('toggle');
+            $('#modal_speaker_name').html("Newsletter");
+            $('#modal_speaker_description').html("<p>" + strDescription + "</p>");
+        });
+    });		
+    </script>
+</head>
+
+<body>
+<!--Cabeçalho-->
+<div class="container">
+    <header class="cabecalho">
+        <a class="logo" href="index.htm" title="Congresso de Inovação FEI">
+            <img src="imagens/logo_small.png" alt="Congresso de Inovação FEI"/>
+        </a> 
+        <h1>A inteligência artificial e o ser humano</h1>
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="evento.htm">O Evento</a></li>
+                <li><a href="programacao.htm">Programação</a></li>
+                <li><a href="palestrantes.htm">Palestrantes</a></li>
+                <li><a href="anteriores.htm">Edições&nbsp;anteriores</a></li>
+                <li><a href="https://portal.fei.edu.br/fale-conosco" target="_blank">Fale conosco</a></li>  
+            </ul>
+            <a href="#" id="pull">Menu</a>
+        </nav>
+    </header>
+
+    <!--Texto-->
+    <section id="conteudo"></section>
+    <article class="texto">
+        <p>O <b>Centro Universitário FEI</b>, será palco de um dos <b>maiores eventos sobre Inovação</b> que tem como objetivo <b>capacitar o jovem para ser um solucionar de problemas</b> que requerem criatividade e domínio do processo inovador, através do uso multidisciplinar de tecnologias, com a finalidade de ser um protagonista na melhoria da condição humana pela qualidade de vida e por um futuro sustentável.</p>
+        <p>Para preparar o <b>profissional do futuro</b>, a FEI busca uma permanente sincronia com os <b>grandes temas</b> do futuro, os quais exigem engenheiros, administradores e profissionais da área de computação <b>preparados para fazerem parte dessas soluções inovadoras</b>.</p>
+    </article>
+
+    <!--Galeria de fotos-->
+    <div class="galeria">
+        <div class="linea"></div>
+        <div class="box-imagens">
+            <div class="imagem">
+                <img src="imagens/C1.png" alt="">
+                <div class="overlay">
+                    <h2>Transmissão online</h2>
+                </div>
+            </div>
+            <div class="imagem">
+                <img src="imagens/C2.png" alt="">
+                <div class="overlay">
+                    <h2>Participação ao vivo</h2>
+                </div>
+            </div>
+            <div class="imagem">
+                <img src="imagens/C3.png" alt="">
+                <div class="overlay">
+                    <h2>Centro Universitário FEI</h2>
+                </div>
+        </div>
+        </div>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <a href="https://portal.fei.edu.br/" target="blank"><img src="imagens/logo.png"></a>
+            <p class="footer-links">
+                <a href="index.htm">Home</a> -
+                <a href="evento.htm">O Evento</a> -  
+                <a href="programacao.htm">Programação</a> - 
+                <a href="palestrantes.htm">Palestrantes</a> - 
+                <a href="anteriores.htm">Edições anteriores</a> - 
+                <a href="https://portal.fei.edu.br/fale-conosco">Fale conosco</a> 
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/fei/?eid=ARAyRmpBVdbp409u-xfV-TqT6G_rTUGEcYebyDlp8cFQerXOqGMeXO-nstzD_xLiwG6ZF-eAHp8lri-g" target="blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/feionline" target="blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/faculdade-de-engenharia-industrial/?originalSubdomain=pt" target="blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h4>Inscreva-se</h4>
+            <form action="#" method="post">
+                <input type="text" id="newsletter_name" name="newsletter_name" placeholder="Seu nome">
+                <input type="text" id="newsletter_email" name="newsletter_email" placeholder="Seu e-Mail">
+                <button id="newsletter_button">Enviar</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>

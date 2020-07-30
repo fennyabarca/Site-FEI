@@ -1,0 +1,171 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/*Resetando estilos*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 768px){
+  header h1{
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: 300;
+  }
+  nav {
+    border-bottom: 0;
+    height: auto;
+  }
+  nav ul {
+    display: none;
+    height: auto;
+  }
+  nav li {
+    text-align: left;
+    display: block;
+    float: none;
+    width: 100%;
+    background-color: #ffeba3;
+  }
+  nav li a {
+    color: #001739;
+    text-align: justify;
+    width: 100%;
+  }
+  nav a {
+    text-align: left;
+    text-indent: 25px;
+  }
+  #pull {
+    text-decoration: none;
+    color: #001739;
+  }
+  nav a#pull {
+    display: block;
+    color: #001739;
+    background-color: #ffc600;
+    text-transform: uppercase;
+    text-align: justify;
+  }
+  nav a#pull:after {
+    content:"";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+    article {
+    width: 100%;
+    text-align: center;
+    margin: 25px 0px -25px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #231f20;
+    padding-bottom: -30px;
+    line-height: 25px;
+  }
+  footer{
+    align-content: flex-start;
+  }
+  footer h4{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #001739;
+    margin-bottom: -25px;
+  }
+  .footer-distributed{
+    padding: 10px;
+    margin-top: 60px;
+  }
+  .footer-distributed .footer-icons{
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+  .footer-distributed .footer-left, .footer-distributed .footer-right{
+    float: none;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .footer-distributed .footer-left{
+    margin-bottom: 40px;
+  }
+  .footer-distributed form{
+    margin-top: 30px;
+    display: block;
+  }
+  .footer-distributed form button{
+    float: left;
+  }
+  .footer-distributed form button:hover{
+    border-radius: 3px;
+    background-color:  #e73859;
+    color: #ffc600;
+    border: 0;
+    padding: 10px 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    float: left;
+  }
+  .footer-distributed form input, .footer-distributed form textarea{
+    width: 100%;
+  }
+  @media screen and (max-width: 480px){
+    footer{
+      align-content: flex-start;
+    }
+    footer h4{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #001739;
+      margin-bottom: -25px;
+    }
+    .footer-distributed{
+      padding: 10px;
+      margin-top: 60px;
+    }
+    .footer-distributed .footer-icons{
+      margin-top: 5px;
+      margin-bottom: -10px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+    .footer-distributed .footer-left, .footer-distributed .footer-right{
+      float: none;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .footer-distributed .footer-left{
+      margin-bottom: 40px;
+    }
+    .footer-distributed form{
+      margin-top: 30px;
+      display: block;
+    }
+    .footer-distributed form button{
+      float: left;
+    }
+    .footer-distributed form button:hover{
+      border-radius: 3px;
+      background-color:  #e73859;
+      color: #ffc600;
+      border: 0;
+      padding: 10px 40px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      float: left;
+    }
+    .footer-distributed form input, .footer-distributed form textarea{
+      width: 100%;
+    }
+  }
+}

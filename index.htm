@@ -1,0 +1,139 @@
+<!--
+    Projeto FEI Landing Page
+    @Author Fernanda Carolina Aguilera Abarca
+    @Data   01/01/2018
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="https://i.ibb.co/j6xnVn3/logo-azul.png"/>
+    <title>Congresso de Inovação FEI</title>
+    
+    <!--Metatag de Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_web.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/estilos_mobile.css"/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+    <script>
+    //Função Slide do Menu
+        $(function() {
+        var pull 		= $('#pull');
+            menu 		= $('nav ul');
+            menuHeight	= menu.height();
+        
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+        
+        $(window).resize(function() {
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+                
+        //Botão "submeter" no rodapé
+        $("#newsletter_button").on("click", function(e) {
+            var strDescription = $("#newsletter_name").val() + "<br>" + $("#newsletter_email").val();
+            e.preventDefault();
+            $('#modal_speaker').modal('toggle');
+            $('#modal_speaker_name').html("Newsletter");
+            $('#modal_speaker_description').html("<p>" + strDescription + "</p>");
+        });
+    });		
+    </script>
+</head>
+
+<body>
+<!--Cabeçalho-->
+<div class="container">
+    <header class="cabecalho">
+        <a class="logo" href="index.htm" title="Congresso de Inovação FEI">
+            <img src="imagens/logo_small.png" alt="Congresso de Inovação FEI"/>
+        </a> 
+        <h1>A inteligência artificial e o ser humano</h1>
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <li><a href="index.htm">Home</a></li>
+                <li><a href="evento.htm">O Evento</a></li>
+                <li><a href="programacao.htm">Programação</a></li>
+                <li><a href="palestrantes.htm">Palestrantes</a></li>
+                <li><a href="anteriores.htm">Edições&nbsp;anteriores</a></li>
+                <li><a href="https://portal.fei.edu.br/fale-conosco" target="_blank">Fale conosco</a></li>  
+            </ul>
+            <a href="#" id="pull">Menu</a>
+        </nav>
+
+        <!--Banner rotativo-->
+        <div id="banner" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#banner" data-slide-to="0" class="active"></li>
+                <li data-target="#banner" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="imagens/banner01.jpg" alt="Piloto automático inteligente"/>
+                </div>
+                <div class="item">
+                    <img src="imagens/banner02.jpg" alt="Cachorro robô"/>
+                </div>
+            </div>
+            <a href="#banner" class="left carousel-control" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a href="#banner" class="right carousel-control" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </header>
+
+    <section id="conteudo"></section>
+    <article class="texto">
+        <p>As demandas da sociedade contemporânea estão voltadas a um <b>Futuro de Inovação:</b> atitudes inovadoras e empreendedoras, articulação do conhecimento, pesquisa e desenvolvimento, são alguns dos inúmeros pilares a serem abordados para uma mudança de visão e uma conexão global com os diferentes nichos de inovação, os quais permeiam a sociedade, a indústria e a universidade.</p> 
+        <p>O desenvolvimento de uma cultura de inovação exige o <b>compartilhamento do conhecimento</b>, a integração empresa-escola, a reorganização dos pensamentos e o estímulo constante à prática – do pensar e do saber, para a <b>construção de mentes conectadas, inovadoras e capazes</b> de atuarem em vista do bem maior, do novo e do mais justo.</p> 
+        <p>Seguindo essa premissa, O <b>Centro Universitário FEI</b>, será palco de um dos maiores eventos sobre Inovação que tem como objetivo capacitar o jovem para ser um solucionar de problemas que requerem <b>criatividade e domínio do processo inovador</b>, através do uso multidisciplinar de tecnologias, com a finalidade de ser um <b>protagonista na melhoria da condição humana</b> pela qualidade de vida e por um futuro sustentável.</p> 
+        <p>Para preparar o profissional do futuro, a FEI busca uma permanente sincronia com os grandes temas do futuro, os quais exigem engenheiros, administradores e profissionais da área de computação preparados para fazerem parte dessas soluções inovadoras.</p> 
+    </article>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <a href="https://portal.fei.edu.br/" target="blank"><img src="imagens/logo.png"></a>
+            <p class="footer-links">
+                <a href="index.htm">Home</a> -
+                <a href="evento.htm">O Evento</a> -  
+                <a href="programacao.htm">Programação</a> - 
+                <a href="palestrantes.htm">Palestrantes</a> - 
+                <a href="anteriores.htm">Edições anteriores</a> - 
+                <a href="https://portal.fei.edu.br/fale-conosco">Fale conosco</a> 
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/fei/?eid=ARAyRmpBVdbp409u-xfV-TqT6G_rTUGEcYebyDlp8cFQerXOqGMeXO-nstzD_xLiwG6ZF-eAHp8lri-g" target="blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/feionline" target="blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/faculdade-de-engenharia-industrial/?originalSubdomain=pt" target="blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h4>Inscreva-se</h4>
+            <form action="#" method="post">
+                <input type="text" id="newsletter_name" name="newsletter_name" placeholder="Seu nome">
+                <input type="text" id="newsletter_email" name="newsletter_email" placeholder="Seu e-Mail">
+                <button id="newsletter_button">Enviar</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>
